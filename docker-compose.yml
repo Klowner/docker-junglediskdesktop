@@ -1,0 +1,11 @@
+jungledisk:
+  build: .
+  environment:
+    - DISPLAY=$DISPLAY
+    - XAUTHORITY=/home/user/.Xauthority
+  volumes:
+    - /tmp/.X11-unix:/tmp/.X11-unix
+    - $PWD/.jungledisk:/home/user/.jungledisk:rw
+    - $PWD/:/mnt
+    - $XAUTHORITY:/home/user/.Xauthority
+  net: host
